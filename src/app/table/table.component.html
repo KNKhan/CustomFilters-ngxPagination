@@ -1,0 +1,56 @@
+<h2>Lists Of Posts</h2>
+<!-- Search term Binding -->
+<div>
+  <label>Filter Data as per Title:</label>
+  <input type='text' [(ngModel)]='filterArgs' placeholder='Enter Search Text'>
+</div>
+<!-- Search term Binding -->
+<div class='table'>
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>User Id</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <ng-container *ngIf='(values | filter:filterArgs | paginate: { id: "dataTable", itemsPerPage: 10, currentPage: p, totalItems: 100 }) as results'>  
+      <tbody>
+          <!-- Rows rendered with ngFor from values array in ts -->
+          <tr *ngFor='let value of results; let count = index;'>
+            <td class='text-center'>{{ count+1 }}</td>
+            <td class='text-center'>{{ value.userId }}</td>
+            <td>{{ value.title }}</td>
+            <td>{{ value.body }}</td>
+          </tr>
+          <!-- Rows rendered with ngFor from values array in ts -->
+      
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">
+            <p>Displaying <span class='rowcount'>{{results.length}}</span> of <span class='rowcount'>{{ totalrowCount ? totalrowCount : 0 }}</span></p>
+          </td>
+          <td align="right">
+            <p>
+                <pagination-controls  id="dataTable"
+                (pageChange)="pageChanged($event)"
+                maxSize="9"
+                directionLinks="true"
+                autoHide="true"
+                responsive="true"
+                previousLabel="Previous"
+                nextLabel="Next"
+                screenReaderPaginationLabel="Pagination"
+                screenReaderPageLabel="page"
+                screenReaderCurrentLabel="You're on page">
+                </pagination-controls>
+            </p>
+          </td>
+        </tr>
+      </tfoot>
+  </ng-container>
+  </table>
+  
+</div>

@@ -1,0 +1,61 @@
+.table {
+    background: #fff;
+}
+table {
+    font-size: 13px;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+}
+table thead tr th, table tfoot tr td {
+    background: #0e8068;
+    border-right: solid 1px #fff;
+    color: #fff;
+    padding: 5px 10px;
+}
+table thead tr th:nth-child {
+    border-right: 0px;
+}
+table thead tr th, table tbody tr td {
+    padding: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+table tbody tr:nth-child(odd) {
+    background: #e2f6ff;
+}
+table tfoot tr td span.rowcount {
+    font-size: 15px;
+    color: yellow;
+}
+.text-center {
+    text-align: center !important;
+}
+input {
+    border: solid 1px #ccc;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    outline: none;
+}
+
+/*-- custom ngx-pagination --*/
+.ngx-pagination a {
+    color: #fff !important;
+}
+.ngx-pagination a:hover {
+    color: #000 !important;
+    border-radius: 15px;   
+}
+.ngx-pagination a:focus {
+    outline: none;
+}
+.ngx-pagination .disabled {
+    opacity: 0.3;
+}
+.ngx-pagination .current {
+    background: yellow !important;
+    color: #70700b !important;
+    border-radius: 15px;
+}
+/*-- custom ngx-pagination --*/
