@@ -28,6 +28,10 @@ export class TableComponent implements OnInit {
   
   constructor(private http: HttpClient) {      
     
+  }
+
+  ngOnInit() {
+
     let getURL = 'http://jsonplaceholder.typicode.com/posts';
     let getResponse; //variable to store the data subscribed
     
@@ -59,9 +63,6 @@ export class TableComponent implements OnInit {
       )
     )
 
-  }
-
-  ngOnInit() {
   }
 
 }
